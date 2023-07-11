@@ -1,0 +1,25 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+
+    <link href="{% static 'search/css/home.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block 'body' %}
+ <div id="container">
+    <header>
+      <img src="{% static 'search/img/bugoogle_logo.png'%}" alt="Google Logo">
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search on Bugoogle">
+        <input type="submit" value="Search">
+      </form>
+    </header>
+    
+    <footer>
+      <p>rodapé</p>
+    </footer>
+  </div>
+{% endblock %}
+
