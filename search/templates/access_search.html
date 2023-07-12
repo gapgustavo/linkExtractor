@@ -1,0 +1,36 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link href="{% static 'search/css/search_done.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block 'body' %}
+    <head>
+        <title>PageRank search results</title>
+        <link rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <div class="search-bar">
+                <form action="{% url 'do_search' %}" method="POST" id="search-form">{% csrf_token %}
+                    <input type="text" name="search" id="search-input" placeholder="Search on Bugoogle">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+        </header>
+    
+        <div id="results-container">
+            <h1>Search results: {{link}}</h1>
+            <ol>
+                {% for url in links_list %}
+                    <li><a href="#">{{ url }}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
+    
+        <footer>
+            <p>by: GAP.code</p>
+        </footer>
+    </body>
+{% endblock %}

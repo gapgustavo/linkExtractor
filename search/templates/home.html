@@ -1,0 +1,30 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+
+    <link href="{% static 'search/css/home.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block 'body' %}
+ <div id="container">
+         {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    <header>
+      <img src="{% static 'search/img/bugoogle_logo.png'%}" alt="Google Logo">
+      <form action="{% url 'do_search' %}" method="POST" id="search-form">{% csrf_token %}
+        <input type="text" name="search" id="search-input" placeholder="Search on Bugoogle">
+        <input type="submit" value="Search">
+      </form>
+    </header>
+    
+    <footer>
+      <p>by: GAP.code</p>
+    </footer>
+  </div>
+{% endblock %}
+
