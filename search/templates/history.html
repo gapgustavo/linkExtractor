@@ -1,0 +1,48 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link href="{% static 'search/css/search_done.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block 'body' %}
+    <head>
+        <title>Resultados do PageRank</title>
+        <link rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <header>
+            <div class="search-bar">
+                <form action="" method="GET" id="search-form">
+                    <select name="date_filter">
+                        <option value="all">All History</option>
+                        {% for date in dates %}
+                            <option value="{{ date }}">{{ date }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Filter">
+                </form>
+            </div>
+        </header>
+    
+        <div id="results-container">
+            <h1>Resultados da Pesquisa</h1>
+            <ol>
+                {% for item in search_results %}
+                    <li>
+                    <span class="total-conta positivo ">{{ item.link }} <a href="{% url 'delete_history' item.id %}"><img src="{% static 'search/img/delete.png' %}"></a></span>
+                    
+                {% endfor %}
+            </ol>
+        </div>
+    
+        <footer>
+            <p>Informações de rodapé</p>
+        </footer>
+    </body>
+{% endblock %}

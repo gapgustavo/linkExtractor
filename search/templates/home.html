@@ -11,8 +11,8 @@
  <div id="container">
     <header>
       <img src="{% static 'search/img/bugoogle_logo.png'%}" alt="Google Logo">
-      <form id="search-form">
-        <input type="text" id="search-input" placeholder="Search on Bugoogle">
+      <form action="{% url 'do_search' %}" method="POST" id="search-form">{% csrf_token %}
+        <input type="text" name="search" id="search-input" placeholder="Search on Bugoogle">
         <input type="submit" value="Search">
       </form>
     </header>
