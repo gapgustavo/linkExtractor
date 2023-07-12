@@ -9,7 +9,7 @@
 
 {% block 'body' %}
     <head>
-    <title>Resultados do PageRank</title>
+    <title>PageRank search results</title>
     <link rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -23,7 +23,7 @@
     </header>
     
     <div id="results-container">
-        <h1>Resultados da Pesquisa</h1>
+        <h1>Search results</h1>
         <ol>
         {% for link in link_list %}
             <li><a href="{{ link }}">{{ link }}</a></li>
@@ -32,7 +32,7 @@
     </div>
     
     <footer>
-        <p>Informações de rodapé</p>
+        <p>by: GAP.code</p>
     </footer>
     </body>
 

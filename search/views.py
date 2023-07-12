@@ -77,3 +77,15 @@ def delete_history(request, id):
     history_item.delete()
     messages.add_message(request, constants.ERROR, 'ITEM has been DELETED')
     return redirect('/search/history/?date_filter=all')
+
+def access_search(request, id):
+    search = Search.objects.get(id=id)
+    link = search.link
+    links_list = search.links_list
+
+    context = {
+        'link':link,
+        'links_list':links_list,
+    }
+
+    return render(request, 'access_search.html', context)

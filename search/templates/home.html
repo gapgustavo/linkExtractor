@@ -9,6 +9,11 @@
 
 {% block 'body' %}
  <div id="container">
+         {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
     <header>
       <img src="{% static 'search/img/bugoogle_logo.png'%}" alt="Google Logo">
       <form action="{% url 'do_search' %}" method="POST" id="search-form">{% csrf_token %}
@@ -18,7 +23,7 @@
     </header>
     
     <footer>
-      <p>rodapé</p>
+      <p>by: GAP.code</p>
     </footer>
   </div>
 {% endblock %}

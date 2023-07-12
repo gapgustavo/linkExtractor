@@ -2,6 +2,7 @@
 import requests
 from bs4 import BeautifulSoup
 import networkx as nx
+from urllib.parse import urljoin
 
 def extract_links(url):
     response = requests.get(url)
@@ -10,8 +11,9 @@ def extract_links(url):
 
     for link in soup.find_all('a'):
         href = link.get('href')
-        if href != '#':
-            links.append(href)
+        if href and not href.startswith('#'):
+            absolute_url = urljoin(url, href)
+            links.append(absolute_url)
         if len(links) == 5:
             break
 

@@ -7,7 +7,7 @@
 
 {% block 'body' %}
     <head>
-        <title>Resultados do PageRank</title>
+        <title>PageRank search results</title>
         <link rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -31,18 +31,21 @@
         </header>
     
         <div id="results-container">
-            <h1>Resultados da Pesquisa</h1>
+            <h1>Search results</h1>
             <ol>
                 {% for item in search_results %}
                     <li>
-                    <span class="total-conta positivo ">{{ item.link }} <a href="{% url 'delete_history' item.id %}"><img src="{% static 'search/img/delete.png' %}"></a></span>
+                    <span class="total-conta positivo ">{{ item.link }} 
+                    <a href="{% url 'delete_history' item.id %}"><img src="{% static 'search/img/delete.png' %}"></a>
+                    <a href="{% url 'access_search' item.id %}"><img src="{% static 'search/img/export.png' %}"></a>
+                    </span>
                     
                 {% endfor %}
             </ol>
         </div>
     
         <footer>
-            <p>Informações de rodapé</p>
+            <p>by: GAP.code</p>
         </footer>
     </body>
 {% endblock %}
