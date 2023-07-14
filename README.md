@@ -68,6 +68,10 @@ python manage.py runserver
 2. Access the application in your web browser at http://127.0.0.1:8000/search/home/.
 
 ## API
+### Docs:
+- http://localhost:8000/searchapi/docs
+
+
 The application provides an API endpoint that accepts both POST and GET requests.
 
 - POST Request: http://localhost:8000/searchapi/
