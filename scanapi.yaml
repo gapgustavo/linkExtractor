@@ -1,0 +1,12 @@
+endpoints:
+  - name: Search API
+    path: http://127.0.0.1:8000/
+    requests:
+      - name: search
+        path: searchapi/
+        method: post
+        body: 
+          link: facebook.com
+      - name: search
+        path: searchapi/
+        method: get
