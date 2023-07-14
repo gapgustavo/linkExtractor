@@ -13,27 +13,16 @@ def home(request):
 def do_search(request):
     if request.method == 'POST':
         url = request.POST.get('search')
-        all_links = []
-        cycle = 0
 
-        while cycle < 5:
-            links = extract_links(url)
-            for link in links:
-                all_links.append(link)
+        page_count = 40
+        urls = bing_search(url, page_count)
+        relevant_urls = get_relevant_links(urls)
 
-            if not links:
-                break
-
-            cycle += 1
-            url = links[0]
-            print()
-
-        relevant_links = get_relevant_links(all_links)
         date = datetime.now()
 
         links_search = Search(
             link=url,
-            links_list=relevant_links,
+            links_list=relevant_urls,
             date=date,
         )
 
