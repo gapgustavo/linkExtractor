@@ -31,12 +31,12 @@ The Django Bing Search project is a web application that allows users to perform
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/gapgustavo/linkExtractor.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd your-repository
+cd linkExtractor
 ```
 
 3. Create a virtual environment:
