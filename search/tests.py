@@ -4,6 +4,8 @@ from datetime import datetime
 from .models import Search
 from .views import *
 
+#TO RUN THE TESTS USE COMMAND: python manage.py test
+
 class SearchViewTests(TestCase):
     def setUp(self):
         self.client = Client()
