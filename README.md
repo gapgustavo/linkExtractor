@@ -13,9 +13,6 @@ A Django-based website that resembles Google search functionality. Given a user-
 ## Introduction
 The Django Bing Search project is a web application that allows users to perform searches similar to Google. It utilizes the Bing search engine to retrieve the top 10 relevant URLs from the first 40 pages of search results. The application provides three main views: home, history, and search_done.
 
-## Introduction
-The Django Bing Search project is a web application that allows users to perform searches similar to Google. It utilizes the Bing search engine to retrieve the top 10 relevant URLs from the first 40 pages of search results. The application provides three main views: home, history, and search_done.
-
 - The home page is accessible at http://127.0.0.1:8000/search/home/ and contains a search field where users can enter a link.
 - The history page, available at http://127.0.0.1:8000/search/history/, displays the search history. Users can select a filter option to view specific searches and use buttons to delete or access individual search records.
 - The search_done page, found at http://127.0.0.1:8000/search/search_done/, shows the results of the most recent search performed.
